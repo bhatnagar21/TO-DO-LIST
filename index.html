@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cute To-Do App ✨</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+  <div id="loader">
+    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_hbr24nnb.json"
+                   background="transparent"
+                   speed="1"
+                   style="width: 200px; height: 200px;"
+                   autoplay></lottie-player>
+  </div>
+
+  <div class="bubble-background"></div>
+  <div id="app-container" style="display: none;">
+    <button id="mode-toggle" title="Toggle Theme">🌙</button>
+    <h1 id="greeting">Welcome! 📝</h1>
+
+    <div class="mood">
+      <label for="mood">How are you feeling today?</label>
+      <select id="mood">
+        <option value="">Select Mood</option>
+        <option value="happy">😊 Happy</option>
+        <option value="sad">😢 Sad</option>
+        <option value="neutral">😐 Neutral</option>
+        <option value="excited">🤩 Excited</option>
+      </select>
+      <p id="mood-msg"></p>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="task-input" placeholder="Add a new task..." />
+      <select id="category-select">
+        <option value="General">📝 General</option>
+        <option value="Work">💼 Work</option>
+        <option value="Personal">🏡 Personal</option>
+        <option value="Shopping">🛒 Shopping</option>
+      </select>
+    </div>
+
+    <div class="controls">
+      <button id="add-task-btn">Add</button>
+      <button id="voice-btn">🎤</button>
+    </div>
+
+    <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+    <p id="progress-text">0% Completed</p>
+
+    <div id="tasks"></div>
+    <p id="quote"></p>
+    <div id="celebration-overlay">🎉 All Tasks Done! 🎉</div>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+  <audio id="audio-delete" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
